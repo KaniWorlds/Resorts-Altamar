@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Altamar · Reservas</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><div class="brand"><span class="logo">A</span><div>altamar<small>RESORTS & HOTELES</small></div></div><span class="tag">Prototipo local</span></header>
+<main>
+  <div class="heading"><div><p class="eyebrow">GESTIÓN DE ESTADÍAS</p><h1>Reservas, sin complicaciones.</h1><p class="muted">20 hoteles · 4 regiones · Un solo registro</p></div><div class="counter"><strong id="count">0</strong><span>reservas activas</span></div></div>
+  <div class="layout">
+    <section class="card"><h2>Nueva reserva</h2><p class="muted">Completa los datos de la estadía.</p>
+      <form id="reservation-form">
+        <label>Nombre del huésped<input name="guest" required minlength="2" maxlength="80" placeholder="Nombre y apellido" autocomplete="name"></label>
+        <label>Hotel<select name="hotel_id" id="hotels" required><option value="">Cargando hoteles…</option></select></label>
+        <div class="dates"><label>Llegada<input name="arrival" id="arrival" type="date" required></label><label>Salida<input name="departure" id="departure" type="date" required></label></div>
+        <p class="hint">Se asignará una habitación disponible. Cada hotel tiene 5 habitaciones de demostración.</p>
+        <button class="primary" type="submit" id="save">Crear reserva <span>→</span></button>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="card list"><div class="list-heading"><h2>Registro de reservas</h2><button id="refresh" class="secondary">Actualizar ↻</button></div><div id="reservations"><p class="empty">Cargando reservas…</p></div></section>
+  </div>
+  <footer>Base académica sin inicio de sesión. Los datos se guardan en este equipo.</footer>
+</main>
+</body></html>
