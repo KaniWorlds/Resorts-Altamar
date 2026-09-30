@@ -39,6 +39,13 @@ Las cuentas de recepción y gerente no se crean desde la aplicación.
 
 Los permisos se validan en el servidor, no solo en la pantalla.
 
+## Servicios y comprobantes
+
+- Al crear una reserva, el huésped o recepción puede agregar spa ($35.000), tour ($50.000) y servicio a la habitación ($18.000). Se admiten hasta 10 unidades de cada servicio.
+- Las reservas muestran sus noches, el costo del alojamiento, el subtotal de servicios y el total en pesos chilenos. La tarifa demostrativa es de $80.000 por noche.
+- En **Servicios** se pueden agregar, cambiar o quitar servicios de una reserva confirmada. Los cambios actualizan los subtotales.
+- **Comprobante** muestra fechas, huésped, alojamiento, servicios, cantidades y total. Es solo informativo: no procesa pagos ni emite una factura.
+
 ## Seguridad aplicada
 
 - **RUT:** se valida el formato y el dígito verificador (módulo 11), en pantalla y en el servidor. Se acepta con o sin puntos y guion.
@@ -53,7 +60,7 @@ Los permisos se validan en el servidor, no solo en la pantalla.
 - **Errores:** los errores inesperados muestran un mensaje genérico, sin detalles internos.
 - **Bitácora:** se registran inicios y cierres de sesión, accesos fallidos, bloqueos, registros de clientes y reservas creadas o canceladas. Solo gerencia puede verla.
 
-**Límites conocidos:** la aplicación funciona con `http://` local, así que el tráfico entre el navegador y el servidor no va cifrado; para publicarla haría falta HTTPS. Tampoco incluye recuperación de contraseña. El bloqueo por intentos podría usarse para bloquear a propósito la cuenta de otra persona durante 5 minutos.
+**Límites conocidos:** la aplicación funciona con `http://` local, así que el tráfico entre el navegador y el servidor no va cifrado; para publicarla haría falta HTTPS. Tampoco incluye recuperación de contraseña ni facturación o procesamiento de pagos. El bloqueo por intentos podría usarse para bloquear a propósito la cuenta de otra persona durante 5 minutos.
 
 ## Probar
 
@@ -80,4 +87,4 @@ Ejecuta las pruebas con `python -m unittest -v`. Usan una base temporal y no mod
 
 ## Alcance
 
-Prototipo basado en el caso Resorts Altamar. Incluye inicio de sesión, registro de clientes, tres roles, validación de RUT, contraseñas con hash, bloqueo por intentos y bitácora de seguridad. No incluye servicios adicionales, check-in/check-out, modificación de reservas, sugerencias de hoteles alternativos, adaptación por hotel físico ni facturación. Las cuentas de prueba son públicas en este README: sirven solo para la demostración. No está publicada en Internet y no representa el cumplimiento completo de la rúbrica EV03.
+Prototipo basado en el caso Resorts Altamar. Incluye inicio de sesión, registro de clientes, tres roles, validación de RUT, contraseñas con hash, bloqueo por intentos, bitácora de seguridad, servicios adicionales y comprobantes informativos. No incluye check-in/check-out, modificación de fechas de reservas, sugerencias de hoteles alternativos, adaptación por hotel físico, facturación ni procesamiento de pagos. Las cuentas de prueba son públicas en este README: sirven solo para la demostración. No está publicada en Internet y no representa el cumplimiento completo de la rúbrica EV03.
